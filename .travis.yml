@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - 12
+
+script:
+  - docker-compose -f docker-compose.yaml build
+  - docker tag udagram-frontend lgcaobianco/udagram-frontend:latest
+  - docker tag udagram-frontend lgcaobianco/udagram-api-feed:latest
+  - docker tag udagram-frontend lgcaobianco/udagram-api-user:latest
+  - docker tag udagram-frontend lgcaobianco/reverseproxy:latest
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push lgcaobianco/udagram-frontend
+  - docker push lgcaobianco/udagram-api-feed
+  - docker push lgcaobianco/udagram-api-user
+  - docker push lgcaobianco/reverseproxy
