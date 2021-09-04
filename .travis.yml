@@ -3,7 +3,7 @@ node_js:
   - 12
 
 script:
-  - docker-compose -f docker-compose.yaml build
+  - docker-compose -f docker-compose.yml build
   - docker tag udagram-frontend lgcaobianco/udagram-frontend:latest
   - docker tag udagram-frontend lgcaobianco/udagram-api-feed:latest
   - docker tag udagram-frontend lgcaobianco/udagram-api-user:latest
