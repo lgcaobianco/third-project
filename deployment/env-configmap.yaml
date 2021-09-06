@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-    POSTGRES_HOST: udagram.cbd5k5aitid1.us-east-1.rds.amazonaws.com
-    POSTGRES_DB: udagram
+    POSTGRES_HOST: udagram-dev.cbd5k5aitid1.us-east-1.rds.amazonaws.com
+    POSTGRES_DB: udagram-dev
     AWS_BUCKET: udagram-135116993753
     AWS_REGION: us-east-1
     AWS_PROFILE: default
